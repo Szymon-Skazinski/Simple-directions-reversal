@@ -2,18 +2,6 @@ package com.company;
 
 import java.util.Arrays;
 
-public class Main {
-
-    public static void main(String[] args) {
-        //    String[] arr = {"Begin on Road A", "Right on Road B", "Right on Road C", "Left on Road D"};
-
-        String[] arr = {"Begin on 9th Dr", "Right on First Road", "Left on 3rd Blvd"};
-        Solution.solve(arr);
-
-    }
-}
-
-
 class Solution {
     public static String[] solve(String[] arr) {
         String[][] invertedStepsArray = stepsInversion(arr);
@@ -27,17 +15,17 @@ class Solution {
     private static String[] directionInversion(String[] arr, String[][] invertedStepsArray) {
         String[] resolve = new String[arr.length];
 
-        for ( int i = 0; i < invertedStepsArray.length ; i++) {
+        for (int i = 0; i < invertedStepsArray.length; i++) {
 
             String direction = "";
 
-            if (i > 0){
-                direction = invertedStepsArray[i-1][0];
+            if (i > 0) {
+                direction = invertedStepsArray[i - 1][0];
             }
 
-            if (i == 0){
+            if (i == 0) {
                 resolve[0] = "Begin on " + invertedStepsArray[i][1];
-            } else if (direction.equalsIgnoreCase("Left")){
+            } else if (direction.equalsIgnoreCase("Left")) {
                 resolve[i] = "Right on " + invertedStepsArray[i][1];
             } else {
                 resolve[i] = "Left on " + invertedStepsArray[i][1];
@@ -67,4 +55,3 @@ class Solution {
         return invertedStepsArray;
     }
 }
-
