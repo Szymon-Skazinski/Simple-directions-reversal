@@ -3,7 +3,7 @@ package com.company;
 import java.util.Arrays;
 
 class Solution {
-    public static String[] solve(String[] arr) {
+    public String[] solve(String[] arr) {
         String[][] invertedStepsArray = stepsInversion(arr);
 
         String[] resolve = directionInversion(arr, invertedStepsArray);
